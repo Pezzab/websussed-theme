@@ -1,0 +1,281 @@
+/*!
+ * Theme Name: Websussed Theme
+ * Template: websussed-core
+ * Description: Main WebSussed Theme. Child theme of WebSussed Core
+ */
+
+/* @layer theme, base, components, utilities; */
+@config "./../../tailwind.config.js";
+
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@plugin "@tailwindcss/typography";
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss";
+
+
+@theme {
+    /* --color */
+    --font-heading: "Bebas Neue";
+    --font-sans: "Roboto Condensed";
+    /* --font-fancy: "Playwrite IE Guides"; */
+    --font-fancy: "Birthstone";
+    /* --font-sans: "Roboto"; */
+    /* --font-sans: "Lexend Deca"; */
+
+    --color-linkcol: blue;
+    --color-hovercol: darkblue;
+    --color-bodycol: #f0f0f0;
+    --color-copycol: #281850;
+    --color-ctacol: orange;
+    --color-maincol: #391cbe;
+    --color-linkdarkbg: #0097cc;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: dotted;
+    border-color: #e5e7eb;
+  }
+
+/* ________________________________________________________________   header layout */
+
+/* _____________________   horizontal and vertical padding */
+
+.content_wysiwyg,
+.contact-details,
+header#masthead,
+.site-navigation,
+header#blog {
+
+}
+
+header#masthead {}
+
+/* _____________________   site and content width */
+
+.site-width {
+    /* background-color: cornsilk; */
+}
+
+.content_wysiwyg .site-width > * {
+  /* @apply max-w-[870px];
+  @apply mx-auto;
+  @apply px-4; */
+}
+
+/* ________________________________________________________________   main layout */
+
+/* _____________________   horizontal and vertical padding */
+
+main#primary {}
+
+#breadcrumbs,
+article,
+.post-navigation,
+.posts-navigation,
+.comments-area,
+.widget,
+main .content_wysiwyg,
+.edit_custom {
+    /* @apply px-24; */
+}
+
+article,
+.comments-area,
+main > header {
+}
+
+.entry-content,
+.entry-footer {
+}
+
+/* _____________________   site and content width */
+
+main#primary > header .site-width > *,
+article header > *,
+article .post-thumbnail > *,
+.entry-content,
+.entry-summary > *,
+.post-navigation > *,
+.posts-navigation > *,
+.comments-area > *,
+.widget > *,
+.entry-footer > *,
+main#primary .content_wysiwyg .site-width > * {
+   /* @apply max-w-[870px];
+   @apply mx-auto;
+   @apply px-4; */
+}
+
+main#primary .site-width {
+  /* background-color: burlywood; */
+}
+
+/* ________________________________________________________________  footer layout */
+
+/* _____________________   horizontal and vertical padding */
+
+footer#colophon {
+  /* @apply px-24; */
+}
+
+/* _____________________   site and content width */
+
+
+/* ________________________________________________________________  typography */
+
+
+  body {
+    @apply font-sans;
+    @apply text-copycol;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading; 
+  }
+
+  article .entry-content,
+  article header,
+  .content_html,
+  .content_html,
+  .content_wysiwyg,
+  .content_shortcode {
+    @apply prose-xl;
+}
+
+  a {
+    @apply text-linkcol;
+  }
+
+  a:hover {
+    @apply text-hovercol;
+    @apply underline;
+  }
+
+/* ________________________________________________________________   responsive nav-menu button */
+
+.menu-toggle {
+  @apply bg-[#0000ff];
+}
+
+button.menu-toggle {
+  @apply lg:hidden;
+}
+
+.menu-toggle {
+  @apply opacity-100;
+}
+
+.burger {
+}
+
+.burger,
+.burger::before,
+.burger::after {
+  background: #f9f9f9;
+
+}
+
+.burger::before,
+.burger::after {
+}
+
+.burger::before {
+}
+
+.burger::after {
+}
+
+.burger.burger-1,
+.burger.burger-1::before,
+.burger.burger-1::after {
+  /* transition-timing-function: ease-in-out;
+  transition-duration: 0.2s; */
+}
+
+.toggled .burger.burger-1 {
+  /* transform: translateX(-50px);
+  background: transparent; */
+}
+
+.toggled .burger.burger-1::before {
+  /* transform: rotate(-45deg) translate(30px, 40px); */
+}
+
+.toggled .burger.burger-1::after {
+  /* transform: rotate(45deg) translate(30px, -42px); */
+}
+
+/* ________________________________________________________________   Dev styles */
+
+ .contact-details,
+ .site-header,
+ .site-navigation,
+ #breadcrumbs,
+ main > header,
+ article,
+ article > header,
+ article > footer,
+ .post-navigation,
+ .posts-navigation,
+ .comments-area,
+ .widget,
+ .site-footer,
+ .content_wysiwyg,
+ .content_html,
+ .edit_custom {
+  /* background-color:rgb(107, 218, 218);
+    @apply border-t;
+  border-color: rgb(20, 116, 116); */
+ }
+ 
+ /* constraint content to reading width */
+ 
+ /* .site-branding, */
+ /* #primary-menu, */
+ main > header > *,
+ article header > *,
+ article .post-thumbnail > *,
+ .entry-content,
+ .entry-summary > *,
+ .post-navigation > *,
+ .posts-navigation > *,
+ .comments-area > *,
+ .widget > *,
+ .entry-footer > *,
+ .content_wysiwyg > *,
+ .content_html > *
+ {
+    /* background-color: rgb(125, 232, 195)
+    @apply border-t;
+    border-color: #86efac; */
+ }
+
+
+.content_html {
+    /* background-color: rgb(233, 210, 97);
+    @apply border-t;
+    border-color: rgb(221, 187, 13); */
+}
+
+.content_wysiwyg {
+  /* background-color: rgb(233, 210, 97);
+    @apply border-t;
+    border-color: rgb(221, 187, 13); */
+}
+
+p {
+    /* background-color: rgb(63, 214, 214); */
+}
+
+/* ________________________________________________________________   Override content width */
+
+
+.entry-header.max-content,
+.entry-content.max-content,
+.entry-footer.max-content {
+    /* @apply max-w-none;
+    @apply mx-0; */
+}
