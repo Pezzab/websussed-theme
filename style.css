@@ -1,8 +1,8 @@
 /*! tailwindcss v4.0.3 | MIT License | https://tailwindcss.com */
 /*!
- * Theme Name: Websussed Child
+ * Theme Name: Websussed Theme
  * Template: websussed-core
- * Description: Barebones ready to go tailwind enabled child theme. Search replace 'websussed-child' + 'websussed_child' with your project theme title, then off you go!
+ * Description: Main WebSussed Theme. Child theme of WebSussed Core
  */
 @layer theme, base, components, utilities;
 @layer theme {
@@ -364,12 +364,12 @@
     --default-mono-font-family: var(--font-mono);
     --default-mono-font-feature-settings: var(--font-mono--font-feature-settings);
     --default-mono-font-variation-settings: var(--font-mono--font-variation-settings);
-    --font-heading: "Bebas Neue";
-    --font-fancy: "Birthstone";
+    --font-heading: "Mada";
     --color-linkcol: blue;
     --color-hovercol: darkblue;
-    --color-bodycol: #f0f0f0;
-    --color-copycol: #281850;
+    --color-bodycol: #53c1d3;
+    --color-copycol: #07252a;
+    --color-pale-col: #b3e2ea;
     --color-ctacol: orange;
     --color-maincol: #391cbe;
     --color-linkdarkbg: #0097cc;
@@ -660,6 +660,9 @@
   }
 }
 @layer utilities {
+  .flex {
+    display: flex;
+  }
   .font-heading {
     font-family: var(--font-heading);
   }
@@ -673,9 +676,78 @@
   border-style: dotted;
   border-color: #e5e7eb;
 }
+.site-navigation {
+  min-height: 4em;
+}
+.contact-details {
+  background-color: darkolivegreen;
+  right: calc(var(--spacing) * 4);
+  position: absolute;
+}
+.site-width, .comment-respond, aside {
+  max-width: 1200px;
+}
 body {
   font-family: var(--font-sans);
   color: var(--color-copycol);
+  background-color: var(--color-bodycol);
+}
+.site-header {
+  padding-top: calc(var(--spacing) * 16);
+}
+.site-title {
+  font-size: var(--text-7xl);
+  line-height: var(--tw-leading, var(--text-7xl--line-height));
+  @media (width >= 768px) {
+    font-size: var(--text-9xl);
+    line-height: var(--tw-leading, var(--text-9xl--line-height));
+  }
+  font-family: var(--font-heading);
+  a {
+    color: var(--color-copycol);
+  }
+}
+.site-description {
+  font-size: var(--text-5xl);
+  line-height: var(--tw-leading, var(--text-5xl--line-height));
+  border-left-style: var(--tw-border-style);
+  border-left-width: 8px;
+  border-color: var(--color-copycol);
+  padding-left: calc(var(--spacing) * 8);
+  z-index: 1;
+  margin: 1em 0px;
+  max-width: 11em;
+  padding-bottom: 0.5em;
+  margin-left: 0.5em;
+}
+.site-branding {
+  position: relative;
+}
+.site-branding::before {
+  content: '';
+  position: absolute;
+  top: -9em;
+  bottom: 0;
+  left: -7em;
+  right: 0;
+  background-color: #6bd0e0;
+  border-radius: 100%;
+  z-index: -1;
+  width: 50em;
+  height: 50em;
+}
+.site-branding::after {
+  content: '';
+  position: absolute;
+  top: -6em;
+  bottom: 0;
+  left: -5em;
+  right: 0;
+  background-color: var(--color-pale-col);
+  border-radius: 100%;
+  z-index: -1;
+  width: 40em;
+  height: 40em;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
@@ -894,8 +966,17 @@ button.menu-toggle {
     display: none;
   }
 }
+.site-navigation {
+  @media (width >= 1024px) {
+    display: flex;
+  }
+  justify-content: center;
+}
 .menu-toggle {
   opacity: 100%;
+}
+nav > .nav-menu {
+  justify-content: flex-end;
 }
 .burger, .burger::before, .burger::after {
   background: #f9f9f9;
@@ -951,4 +1032,9 @@ button.menu-toggle {
     transform: none;
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }

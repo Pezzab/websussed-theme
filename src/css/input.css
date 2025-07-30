@@ -16,17 +16,24 @@
 
 @theme {
     /* --color */
-    --font-heading: "Bebas Neue";
+    /* --font-heading: "Bebas Neue"; */
+    /* --font-heading: "Quicksand"; */
+    /* --font-heading: "Bricolage Grotesque"; */
+    /* --font-heading: "Pontano Sans"; */
+    --font-heading: "Mada";
+    /* --font-heading: "Hind"; */
     --font-sans: "Roboto Condensed";
     /* --font-fancy: "Playwrite IE Guides"; */
-    --font-fancy: "Birthstone";
+    /* --font-fancy: "Birthstone"; */
+     /* --font-fancy: "Quicksand"; */
     /* --font-sans: "Roboto"; */
     /* --font-sans: "Lexend Deca"; */
 
     --color-linkcol: blue;
     --color-hovercol: darkblue;
-    --color-bodycol: #f0f0f0;
-    --color-copycol: #281850;
+    --color-bodycol: #53c1d3;
+    --color-copycol: #07252a;
+    --color-pale-col: #b3e2ea;
     --color-ctacol: orange;
     --color-maincol: #391cbe;
     --color-linkdarkbg: #0097cc;
@@ -51,6 +58,16 @@ header#blog {
 
 }
 
+.site-navigation {
+  min-height: 4em;
+}
+
+.contact-details {
+  background-color: darkolivegreen;
+  @apply right-4;
+  @apply absolute;
+}
+
 header#masthead {}
 
 /* _____________________   site and content width */
@@ -63,6 +80,13 @@ header#masthead {}
   /* @apply max-w-[870px];
   @apply mx-auto;
   @apply px-4; */
+}
+
+
+.site-width,
+.comment-respond,
+aside {
+    @apply max-w-[1200px];
 }
 
 /* ________________________________________________________________   main layout */
@@ -130,6 +154,69 @@ footer#colophon {
   body {
     @apply font-sans;
     @apply text-copycol;
+    @apply bg-bodycol;
+  }
+
+  .site-header {
+    @apply pt-16;
+  }
+
+  .site-title {
+
+    @apply text-7xl;
+    @apply md:text-9xl;
+    @apply font-heading;
+    /* @apply font-normal; */
+
+    a {
+      @apply text-copycol;
+    }
+  }
+
+  .site-description {
+    @apply text-5xl;
+    @apply border-l-8;
+    @apply border-copycol;
+    @apply pl-8;
+    z-index: 1;
+    margin: 1em 0px;
+    max-width: 11em;
+    padding-bottom: 0.5em;
+    margin-left: 0.5em;
+  }
+
+  .site-branding {
+     @apply relative;
+  }
+
+
+   .site-branding::before {
+    content: '';
+    @apply absolute;
+    top: -9em;
+    bottom: 0;
+    left:-7em;
+    right:0;
+    /* @apply bg-pale-col; */
+    background-color: #6bd0e0;
+    border-radius: 100%;
+    z-index: -1;
+    width: 50em;
+    height: 50em;
+  }
+
+  .site-branding::after {
+    content: '';
+    @apply absolute;
+    top: -6em;
+    bottom: 0;
+    left:-5em;
+    right:0;
+    @apply bg-pale-col;
+    border-radius: 100%;
+    z-index: -1;
+    width: 40em;
+    height: 40em;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -160,12 +247,23 @@ footer#colophon {
   @apply bg-[#0000ff];
 }
 
+/* note menu break points */
+
 button.menu-toggle {
   @apply lg:hidden;
 }
 
+.site-navigation {
+  @apply lg:flex;
+  @apply justify-center;
+}
+
 .menu-toggle {
   @apply opacity-100;
+}
+
+nav > .nav-menu {
+  @apply justify-end;
 }
 
 .burger {

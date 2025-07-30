@@ -37,8 +37,21 @@ function webussed_child_add_fonts() {
     wp_register_style('birthstone-async-defer', 'https://fonts.googleapis.com/css2?family=Birthstone&display=swap'); // "Roboto Condensed"
     wp_enqueue_style('birthstone-async-defer'); // Birthstone
 
+    wp_register_style('quicksand-async-defer', 'https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap'); // "Quicksand"
+    wp_enqueue_style('quicksand-async-defer');
 
-    // https://fonts.googleapis.com/css2?family=Playwrite+DE+SAS+Guides&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap
+    wp_register_style('bricolage-grotesque-async-defer', 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap'); // "Bricolage+Grotesque"
+    wp_enqueue_style('bricolage-grotesque-async-defer');
+
+    wp_register_style('pontano-sans-async-defer', 'https://fonts.googleapis.com/css2?family=Pontano+Sans:wght@300..700&display=swap'); // "Pontano Sans"
+    wp_enqueue_style('pontano-sans-async-defer');
+
+    wp_register_style('hind-async-defer', 'https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Hind:wght@300;400;500;600;700&display=swap'); // "Hind"
+    wp_enqueue_style('hind-async-defer');
+
+    wp_register_style('mada-async-defer', 'https://fonts.googleapis.com/css2?family=Mada:wght@200..900&display=swap'); // "Mada"
+    wp_enqueue_style('mada-async-defer');
+
 
 }
 
